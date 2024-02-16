@@ -52,7 +52,7 @@ def draw_player(screen, direction, player_images, counter, player_x, player_y):
 
 def get_targets(blink_x, blink_y, ink_x, ink_y, pink_x, pink_y, clyd_x, clyd_y, player_x, player_y, powerup, blinky, inky, pinky, clyde, eaten_ghost, HEIGHT, WIDTH):
     '''
-
+    The function defines all target positions for ghosts in different situations, related to pacman's actions
     '''
     if player_x < 450: # pacman x coordinate
         runaway_x = 900 # target positions for ghosts when the player has a powerup
