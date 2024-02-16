@@ -2,7 +2,7 @@ import copy
 from board import boards
 import pygame
 import math
-from utils import draw_elems, draw_board, draw_player
+from utils import draw_elems, draw_board, draw_player, get_targets
 
 pygame.init()
 
@@ -145,7 +145,8 @@ while run:
                   clyde_box, 3)
     # Відмалювання текстів
     draw_elems(screen, font, score, powerup, lives, player_images, game_over, game_won) #changed
-    targets = get_targets(blinky_x, blinky_y, inky_x, inky_y, pinky_x, pinky_y, clyde_x, clyde_y)
+    # Налагодження переміщення привидів в окремих випадках (якщо у пекмена паверап)
+    targets = get_targets(blinky_x, blinky_y, inky_x, inky_y, pinky_x, pinky_y, clyde_x, clyde_y, player_x, player_y, powerup, blinky, inky, pinky, clyde, eaten_ghost, HEIGHT, WIDTH) #changed
     # Перевірка на можливість руху та дій
     turns_allowed = check_position(center_x, center_y)
     # Перевірка на можливість руху гравця та привидів
