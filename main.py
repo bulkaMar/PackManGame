@@ -414,3 +414,16 @@ while run:
         player_x = -47
     elif player_x < -50:
         player_x = 897
+
+    # Воскресіння привидів
+    if blinky.in_box and blinky_dead:
+        blinky_dead = False
+    if inky.in_box and inky_dead:
+        inky_dead = False
+    if pinky.in_box and pinky_dead:
+        pinky_dead = False
+    if clyde.in_box and clyde_dead:
+        clyde_dead = False
+    # Відмалювання всього
+    pygame.display.flip()
+pygame.quit()
