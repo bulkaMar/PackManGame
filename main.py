@@ -343,3 +343,58 @@ while run:
         clyde_dead = True
         eaten_ghost[3] = True
         score += (2 ** eaten_ghost.count(True)) * 100
+
+    # Обробник подій гравця
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                direction_command = 0
+            if event.key == pygame.K_LEFT:
+                direction_command = 1
+            if event.key == pygame.K_UP:
+                direction_command = 2
+            if event.key == pygame.K_DOWN:
+                direction_command = 3
+            if event.key == pygame.K_SPACE and (game_over or game_won):
+                powerup = False
+                power_counter = 0
+                lives -= 1
+                startup_counter = 0
+                player_x = 450
+                player_y = 663
+                direction = 0
+                direction_command = 0
+                blinky_x = 56
+                blinky_y = 58
+                blinky_direction = 0
+                inky_x = 440
+                inky_y = 388
+                inky_direction = 2
+                pinky_x = 440
+                pinky_y = 438
+                pinky_direction = 2
+                clyde_x = 440
+                clyde_y = 438
+                clyde_direction = 2
+                eaten_ghost = [False, False, False, False]
+                blinky_dead = False
+                inky_dead = False
+                clyde_dead = False
+                pinky_dead = False
+                score = 0
+                lives = 3
+                level = copy.deepcopy(boards)
+                game_over = False
+                game_won = False
+
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT and direction_command == 0:
+                direction_command = direction
+            if event.key == pygame.K_LEFT and direction_command == 1:
+                direction_command = direction
+            if event.key == pygame.K_UP and direction_command == 2:
+                direction_command = direction
+            if event.key == pygame.K_DOWN and direction_command == 3:
+                direction_command = direction
