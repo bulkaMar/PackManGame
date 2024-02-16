@@ -103,3 +103,34 @@ while run:
     #Хітбокс гравця
     center_x = player_x + 23
     center_y = player_y + 24
+
+    # Налаштування швидкостей привидів
+    if powerup:
+        ghost_speeds = [1, 1, 1, 1]
+    else:
+        ghost_speeds = [2, 2, 2, 2]
+    if eaten_ghost[0]:
+        ghost_speeds[0] = 2
+    if eaten_ghost[1]:
+        ghost_speeds[1] = 2
+    if eaten_ghost[2]:
+        ghost_speeds[2] = 2
+    if eaten_ghost[3]:
+        ghost_speeds[3] = 2
+    if blinky_dead:
+        ghost_speeds[0] = 4
+    if inky_dead:
+        ghost_speeds[1] = 4
+    if pinky_dead:
+        ghost_speeds[2] = 4
+    if clyde_dead:
+        ghost_speeds[3] = 4
+
+    game_won = True
+    for i in range(len(level)):
+        if 1 in level[i] or 2 in level[i]:
+            game_won = False
+
+    player_circle = pygame.draw.circle(screen, 'black', (center_x, center_y), 20, 2)
+    # Відмалювання гравця
+    draw_player()
