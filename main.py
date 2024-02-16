@@ -2,7 +2,7 @@ import copy
 from board import boards
 import pygame
 import math
-import drawmisc
+from utils import draw_elems
 
 pygame.init()
 
@@ -144,7 +144,7 @@ while run:
     clyde = Ghost(clyde_x, clyde_y, targets[3], ghost_speeds[3], clyde_img, clyde_direction, clyde_dead,
                   clyde_box, 3)
     # Відмалювання текстів
-    drawmisc.draw_misc(score, game_over, game_won, screen, font, lives, player_images)
+    draw_elems(screen, font, score, powerup, lives, player_images, game_over, game_won) #changed
     targets = get_targets(blinky_x, blinky_y, inky_x, inky_y, pinky_x, pinky_y, clyde_x, clyde_y)
     # Перевірка на можливість руху та дій
     turns_allowed = check_position(center_x, center_y)
