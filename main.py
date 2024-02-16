@@ -49,3 +49,57 @@ clyde_y = 438
 clyde_direction = 2
 counter = 0
 flicker = False
+#Початкові значення для початку гри
+turns_allowed = [False, False, False, False]
+direction_command = 0
+player_speed = 2
+score = 0
+powerup = False
+power_counter = 0
+eaten_ghost = [False, False, False, False]
+targets = [(player_x, player_y), (player_x, player_y), (player_x, player_y), (player_x, player_y)]
+blinky_dead = False
+inky_dead = False
+clyde_dead = False
+pinky_dead = False
+blinky_box = False
+inky_box = False
+clyde_box = False
+pinky_box = False
+moving = False
+ghost_speeds = [2, 2, 2, 2]
+startup_counter = 0
+lives = 3
+game_over = False
+game_won = False
+
+#Головний цикл гри
+run = True
+while run:
+    timer.tick(fps)
+    #Налаштування частоти блимань
+    if counter < 19:
+        counter += 1
+        if counter > 3:
+            flicker = False
+    else:
+        counter = 0
+        flicker = True
+    if powerup and power_counter < 600:
+        power_counter += 1
+    elif powerup and power_counter >= 600:
+        power_counter = 0
+        powerup = False
+        eaten_ghost = [False, False, False, False]
+    if startup_counter < 180 and not game_over and not game_won:
+        moving = False
+        startup_counter += 1
+    else:
+        moving = True
+
+    screen.fill('black')
+    #Відмалювання рівня
+    draw_board()
+    #Хітбокс гравця
+    center_x = player_x + 23
+    center_y = player_y + 24
