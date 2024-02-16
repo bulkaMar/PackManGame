@@ -1,6 +1,11 @@
+import copy
 import pygame
+import math
+
+
 pygame.init()
 
-screen=pygame.display.set_mode((600,400))
-while True:
-    pygame.display.update()
+#Налаштування параметрів екрану
+WIDTH = 900
+HEIGHT = 950
+screen = pygame.display.set_mode([WIDTH, HEIGHT])
