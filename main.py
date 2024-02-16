@@ -2,7 +2,7 @@ import copy
 from board import boards
 import pygame
 import math
-from utils import draw_elems, draw_board
+from utils import draw_elems, draw_board, draw_player
 
 pygame.init()
 
@@ -133,7 +133,7 @@ while run:
 
     player_circle = pygame.draw.circle(screen, 'black', (center_x, center_y), 20, 2)
     # Відмалювання гравця
-    draw_player()
+    draw_player(screen, direction, player_images, counter, player_x, player_y)
     # Створення привидів
     blinky = Ghost(blinky_x, blinky_y, targets[0], ghost_speeds[0], blinky_img, blinky_direction, blinky_dead,
                    blinky_box, 0)
