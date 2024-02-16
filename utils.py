@@ -216,3 +216,35 @@ def check_position(centerx, centery, direction, HEIGHT, WIDTH, level):
         turns[1] = True # right
 
     return turns
+
+
+def move_player(play_x, play_y, direction, turns_allowed, player_speed):
+    '''
+    Rules of moving pacman around
+    '''
+    if direction == 0 and turns_allowed[0]: # right
+        play_x += player_speed # moves pacman to the right by increasing the x-coordinate of pacman
+    elif direction == 1 and turns_allowed[1]: # left
+        play_x -= player_speed # analogically
+    if direction == 2 and turns_allowed[2]: # up
+        play_y -= player_speed
+    elif direction == 3 and turns_allowed[3]: # down
+        play_y += player_speed
+    return play_x, play_y
+
+
+def move_player(play_x, play_y, direction, turns_allowed, player_speed):
+    '''
+    Rules of moving pacman around
+    '''
+    if direction == 0 and turns_allowed[0]: # right
+        play_x += player_speed # moves pacman to the right by increasing the x-coordinate of pacman
+    elif direction == 1 and turns_allowed[1]: # left
+        play_x -= player_speed # analogically
+    if direction == 2 and turns_allowed[2]: # up
+        play_y -= player_speed
+    elif direction == 3 and turns_allowed[3]: # down
+        play_y += player_speed
+    return play_x, play_y
+
+

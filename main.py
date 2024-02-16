@@ -2,7 +2,7 @@ import copy
 from board import boards
 import pygame
 import math
-from utils import draw_elems, draw_board, draw_player, get_targets, check_position
+from utils import draw_elems, draw_board, draw_player, get_targets, check_position, move_player
 
 pygame.init()
 
@@ -151,7 +151,7 @@ while run:
     turns_allowed = check_position(center_x, center_y, direction, HEIGHT, WIDTH, level) #changed
     # Перевірка на можливість руху гравця та привидів
     if moving:
-        player_x, player_y = move_player(player_x, player_y)
+        player_x, player_y = move_player(player_x, player_y, direction, turns_allowed, player_speed) #changed
         if not blinky_dead and not blinky.in_box:
             blinky_x, blinky_y, blinky_direction = blinky.move_blinky()
         else:
