@@ -2,7 +2,7 @@ import copy
 from board import boards
 import pygame
 import math
-from utils import draw_elems
+from utils import draw_elems, draw_board
 
 pygame.init()
 
@@ -99,7 +99,7 @@ while run:
 
     screen.fill('black')
     #Відмалювання рівня
-    draw_board()
+    draw_board(screen, color, flicker, HEIGHT, WIDTH, level, PI) #changed
     #Хітбокс гравця
     center_x = player_x + 23
     center_y = player_y + 24

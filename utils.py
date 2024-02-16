@@ -29,3 +29,39 @@ def draw_elems(screen, font, score, powerup, lives, player_images, game_over, ga
         restart_rect = restart_text.get_rect(center=(screen.get_width()/2, screen.get_height()/2 + 50))
         screen.blit(gameover_text, gameover_rect)
         screen.blit(restart_text, restart_rect)
+
+
+def draw_board(screen, color, flicker, HEIGHT, WIDTH, level, PI):
+    '''
+    Drawing elements of the board. Spheres, powerups and the board
+    '''
+    num1 = ((HEIGHT - 50) // 32)
+    num2 = (WIDTH // 30)
+    for i in range(len(level)):
+        for j in range(len(level[i])):
+            if level[i][j] == 1:
+                pygame.draw.circle(screen, 'white', (j * num2 + (0.5 * num2), i * num1 + (0.5 * num1)), 4) # adding spheres
+            if level[i][j] == 2 and not flicker:
+                pygame.draw.circle(screen, 'white', (j * num2 + (0.5 * num2), i * num1 + (0.5 * num1)), 10)# adding powerups
+            if level[i][j] == 3:
+                pygame.draw.line(screen, color, (j * num2 + (0.5 * num2), i * num1),
+                                 (j * num2 + (0.5 * num2), i * num1 + num1), 3)# adding vertical lines
+            if level[i][j] == 4:
+                pygame.draw.line(screen, color, (j * num2, i * num1 + (0.5 * num1)), # adding horizontal
+                                 (j * num2 + num2, i * num1 + (0.5 * num1)), 3)
+            if level[i][j] == 5:
+                pygame.draw.arc(screen, color, [(j * num2 - (num2 * 0.4)) - 2, (i * num1 + (0.5 * num1)), num2, num1],
+                                0, PI / 2, 3) # adding top right corner
+            if level[i][j] == 6:
+                pygame.draw.arc(screen, color, # adding top left corner
+                                [(j * num2 + (num2 * 0.5)), (i * num1 + (0.5 * num1)), num2, num1], PI / 2, PI, 3)
+            if level[i][j] == 7:# adding bottom left corner
+                pygame.draw.arc(screen, color, [(j * num2 + (num2 * 0.5)), (i * num1 - (0.4 * num1)), num2, num1], PI,
+                                3 * PI / 2, 3)
+            if level[i][j] == 8: # adding bottom right corner
+                pygame.draw.arc(screen, color,
+                                [(j * num2 - (num2 * 0.4)) - 2, (i * num1 - (0.4 * num1)), num2, num1], 3 * PI / 2,
+                                2 * PI, 3)
+            if level[i][j] == 9: # adding vertical line for ghost's gate
+                pygame.draw.line(screen, 'white', (j * num2, i * num1 + (0.5 * num1)),
+                                 (j * num2 + num2, i * num1 + (0.5 * num1)), 3)
