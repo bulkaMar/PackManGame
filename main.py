@@ -4,6 +4,7 @@ import pygame
 import math
 from drawmisc import draw_misc
 from utils import draw_board, draw_player, get_targets, check_position, move_player, check_collisions
+from ghost import Ghost
 
 pygame.init()
 
