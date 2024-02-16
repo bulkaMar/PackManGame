@@ -2,7 +2,7 @@ import copy
 from board import boards
 import pygame
 import math
-from utils import draw_elems, draw_board, draw_player, get_targets, check_position, move_player
+from utils import draw_elems, draw_board, draw_player, get_targets, check_position, move_player, check_collisions
 
 pygame.init()
 
@@ -165,7 +165,7 @@ while run:
         else:
             inky_x, inky_y, inky_direction = inky.move_clyde()
         clyde_x, clyde_y, clyde_direction = clyde.move_clyde()
-    score, powerup, power_counter, eaten_ghost = check_collisions(score, powerup, power_counter, eaten_ghost)
+    score, powerup, power_counter, eaten_ghost = check_collisions(score, powerup, power_counter, eaten_ghost, HEIGHT, WIDTH, player_x, center_y, center_x, level) #changed
     # Перевірка на отримання урону від привидів
     if not powerup:
         if (player_circle.colliderect(blinky.rect) and not blinky.dead) or \

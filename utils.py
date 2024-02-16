@@ -248,3 +248,20 @@ def move_player(play_x, play_y, direction, turns_allowed, player_speed):
     return play_x, play_y
 
 
+def check_collisions(score, power, power_count, eaten_ghosts, HEIGHT, WIDTH, player_x, center_y, center_x, level):
+    '''
+    Checking collision of pacman with spheres, powerups and ghosts. Updating values according to actions
+    '''
+    num1 = (HEIGHT - 50) // 32 # number of cells vertically
+    num2 = WIDTH // 30 # horizontally, we need them to convert coordinates of pacman into indeces of our array
+    if 0 < player_x < 870:
+        if level[center_y // num1][center_x // num2] == 1: # indeces with value 1 (referring to spheres)
+            level[center_y // num1][center_x // num2] = 0 # turn into 0 (referring to nothingness, indicating it's eaten)
+            score += 10 # adding to the score when pacman eats a sphere
+        if level[center_y // num1][center_x // num2] == 2: # indeces with value 2 (referring to powerups)
+            level[center_y // num1][center_x // num2] = 0 # turn into 0 (referring to nothingness, indicating it's eaten)
+            score += 50 # adding to the score when powerup is eaten
+            power = True # toggle powerup mode on
+            power_count = 0
+            eaten_ghosts = [False, False, False, False] # initial array of ghosts, which arent eaten
+    return score, power, power_count, eaten_ghosts
