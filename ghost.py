@@ -1,4 +1,4 @@
-import main
+from main import powerup, eaten_ghost, screen, spooked_img, dead_img
 import pygame
 class Ghost:
    def __init__(self, x_coord, y_coord, target, speed, img, direct, dead, box, id):
