@@ -1,12 +1,12 @@
 import pygame
 #Функція для відмалювання різних текстів
-def draw_misc(score, game_over, game_won, screen, font, lives, player_images):
+def draw_misc(screen, font, score, lives, player_images, game_over, game_won):
     '''
     This function renders different elements of the game, including score,
     powerups, lives, messages if player lost or won.
     '''
     #Вивід на екран поточної к-сті очок
-    score_text = font.render(f'К-сть очок: {score}', True, 'white')
+    score_text = font.render(f'Score: {score}', True, 'white')
     screen.blit(score_text, (10, 920))
     #Вивід на екран поточної к-сті життів
     for i in range(lives):
