@@ -2,7 +2,8 @@ import copy
 from board import boards
 import pygame
 import math
-from utils import draw_elems, draw_board, draw_player, get_targets, check_position, move_player, check_collisions
+from drawmisc import draw_misc
+from utils import draw_board, draw_player, get_targets, check_position, move_player, check_collisions
 
 pygame.init()
 
@@ -144,7 +145,7 @@ while run:
     clyde = Ghost(clyde_x, clyde_y, targets[3], ghost_speeds[3], clyde_img, clyde_direction, clyde_dead,
                   clyde_box, 3)
     # Відмалювання текстів
-    draw_elems(screen, font, score, powerup, lives, player_images, game_over, game_won) #changed
+    draw_misc(screen, font, score, lives, player_images, game_over, game_won) #changed
     # Налагодження переміщення привидів в окремих випадках (якщо у пекмена паверап)
     targets = get_targets(blinky_x, blinky_y, inky_x, inky_y, pinky_x, pinky_y, clyde_x, clyde_y, player_x, player_y, powerup, blinky, inky, pinky, clyde, eaten_ghost, HEIGHT, WIDTH) #changed
     # Перевірка на можливість руху та дій
