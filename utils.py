@@ -164,3 +164,55 @@ def get_targets(blink_x, blink_y, ink_x, ink_y, pink_x, pink_y, clyd_x, clyd_y, 
         else:
             clyd_target = return_target
     return [blink_target, ink_target, pink_target, clyd_target] # returning target positions for every ghost
+
+
+def check_position(centerx, centery, direction, HEIGHT, WIDTH, level):
+    '''
+    Processing all available moves for pacman in particular positions on the map
+    '''
+    turns = [False, False, False, False] # tracking pacman's directions he can go
+    num1 = (HEIGHT - 50) // 32
+    num2 = (WIDTH // 30)
+    num3 = 15 # fudge number to adjust the precision of collision detection
+    # check collisions based on center x and center y of player +/- fudge number
+    if centerx // 30 < 29: # if pacman is within these map bounds
+        if direction == 0: # right
+            if level[centery // num1][(centerx - num3) // num2] < 3: # checking direction and the value of the cell in array in the directions
+                turns[1] = True # can turn this direction (< 3 because empty spaces)
+        if direction == 1: # left
+            if level[centery // num1][(centerx + num3) // num2] < 3:
+                turns[0] = True # analogically
+        if direction == 2: # up
+            if level[(centery + num3) // num1][centerx // num2] < 3:
+                turns[3] = True # analogically
+        if direction == 3: # down
+            if level[(centery - num3) // num1][centerx // num2] < 3:
+                turns[2] = True # analogically
+
+        if direction == 2 or direction == 3: # up or down
+            if 12 <= centerx % num2 <= 18: # the horizontal position of the player within the current cell
+                if level[(centery + num3) // num1][centerx // num2] < 3: # analogically
+                    turns[3] = True
+                if level[(centery - num3) // num1][centerx // num2] < 3:
+                    turns[2] = True
+            if 12 <= centery % num1 <= 18:
+                if level[centery // num1][(centerx - num2) // num2] < 3:
+                    turns[1] = True
+                if level[centery // num1][(centerx + num2) // num2] < 3:
+                    turns[0] = True
+        if direction == 0 or direction == 1: # right or left
+            if 12 <= centerx % num2 <= 18:
+                if level[(centery + num1) // num1][centerx // num2] < 3:
+                    turns[3] = True
+                if level[(centery - num1) // num1][centerx // num2] < 3:
+                    turns[2] = True
+            if 12 <= centery % num1 <= 18:
+                if level[centery // num1][(centerx - num3) // num2] < 3:
+                    turns[1] = True
+                if level[centery // num1][(centerx + num3) // num2] < 3:
+                    turns[0] = True
+    else:
+        turns[0] = True # left
+        turns[1] = True # right
+
+    return turns

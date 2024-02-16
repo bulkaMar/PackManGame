@@ -2,7 +2,7 @@ import copy
 from board import boards
 import pygame
 import math
-from utils import draw_elems, draw_board, draw_player, get_targets
+from utils import draw_elems, draw_board, draw_player, get_targets, check_position
 
 pygame.init()
 
@@ -148,7 +148,7 @@ while run:
     # Налагодження переміщення привидів в окремих випадках (якщо у пекмена паверап)
     targets = get_targets(blinky_x, blinky_y, inky_x, inky_y, pinky_x, pinky_y, clyde_x, clyde_y, player_x, player_y, powerup, blinky, inky, pinky, clyde, eaten_ghost, HEIGHT, WIDTH) #changed
     # Перевірка на можливість руху та дій
-    turns_allowed = check_position(center_x, center_y)
+    turns_allowed = check_position(center_x, center_y, direction, HEIGHT, WIDTH, level) #changed
     # Перевірка на можливість руху гравця та привидів
     if moving:
         player_x, player_y = move_player(player_x, player_y)
