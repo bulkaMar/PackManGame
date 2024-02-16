@@ -146,3 +146,200 @@ while run:
     # Відмалювання текстів
     drawmisc.draw_misc(score, game_over, game_won, screen, font, lives, player_images)
     targets = get_targets(blinky_x, blinky_y, inky_x, inky_y, pinky_x, pinky_y, clyde_x, clyde_y)
+    # Перевірка на можливість руху та дій
+    turns_allowed = check_position(center_x, center_y)
+    # Перевірка на можливість руху гравця та привидів
+    if moving:
+        player_x, player_y = move_player(player_x, player_y)
+        if not blinky_dead and not blinky.in_box:
+            blinky_x, blinky_y, blinky_direction = blinky.move_blinky()
+        else:
+            blinky_x, blinky_y, blinky_direction = blinky.move_clyde()
+        if not pinky_dead and not pinky.in_box:
+            pinky_x, pinky_y, pinky_direction = pinky.move_pinky()
+        else:
+            pinky_x, pinky_y, pinky_direction = pinky.move_clyde()
+        if not inky_dead and not inky.in_box:
+            inky_x, inky_y, inky_direction = inky.move_inky()
+        else:
+            inky_x, inky_y, inky_direction = inky.move_clyde()
+        clyde_x, clyde_y, clyde_direction = clyde.move_clyde()
+    score, powerup, power_counter, eaten_ghost = check_collisions(score, powerup, power_counter, eaten_ghost)
+    # Перевірка на отримання урону від привидів
+    if not powerup:
+        if (player_circle.colliderect(blinky.rect) and not blinky.dead) or \
+                (player_circle.colliderect(inky.rect) and not inky.dead) or \
+                (player_circle.colliderect(pinky.rect) and not pinky.dead) or \
+                (player_circle.colliderect(clyde.rect) and not clyde.dead):
+            if lives > 0:
+                lives -= 1
+                startup_counter = 0
+                powerup = False
+                power_counter = 0
+                player_x = 450
+                player_y = 663
+                direction = 0
+                direction_command = 0
+                blinky_x = 56
+                blinky_y = 58
+                blinky_direction = 0
+                inky_x = 440
+                inky_y = 388
+                inky_direction = 2
+                pinky_x = 440
+                pinky_y = 438
+                pinky_direction = 2
+                clyde_x = 440
+                clyde_y = 438
+                clyde_direction = 2
+                eaten_ghost = [False, False, False, False]
+                blinky_dead = False
+                inky_dead = False
+                clyde_dead = False
+                pinky_dead = False
+            else:
+                game_over = True
+                moving = False
+                startup_counter = 0
+    # Перевірка на з'їдання гравця привидами під час паверапу
+    if powerup and player_circle.colliderect(blinky.rect) and eaten_ghost[0] and not blinky.dead:
+        if lives > 0:
+            powerup = False
+            power_counter = 0
+            lives -= 1
+            startup_counter = 0
+            player_x = 450
+            player_y = 663
+            direction = 0
+            direction_command = 0
+            blinky_x = 56
+            blinky_y = 58
+            blinky_direction = 0
+            inky_x = 440
+            inky_y = 388
+            inky_direction = 2
+            pinky_x = 440
+            pinky_y = 438
+            pinky_direction = 2
+            clyde_x = 440
+            clyde_y = 438
+            clyde_direction = 2
+            eaten_ghost = [False, False, False, False]
+            blinky_dead = False
+            inky_dead = False
+            clyde_dead = False
+            pinky_dead = False
+        else:
+            game_over = True
+            moving = False
+            startup_counter = 0
+    if powerup and player_circle.colliderect(inky.rect) and eaten_ghost[1] and not inky.dead:
+        if lives > 0:
+            powerup = False
+            power_counter = 0
+            lives -= 1
+            startup_counter = 0
+            player_x = 450
+            player_y = 663
+            direction = 0
+            direction_command = 0
+            blinky_x = 56
+            blinky_y = 58
+            blinky_direction = 0
+            inky_x = 440
+            inky_y = 388
+            inky_direction = 2
+            pinky_x = 440
+            pinky_y = 438
+            pinky_direction = 2
+            clyde_x = 440
+            clyde_y = 438
+            clyde_direction = 2
+            eaten_ghost = [False, False, False, False]
+            blinky_dead = False
+            inky_dead = False
+            clyde_dead = False
+            pinky_dead = False
+        else:
+            game_over = True
+            moving = False
+            startup_counter = 0
+    if powerup and player_circle.colliderect(pinky.rect) and eaten_ghost[2] and not pinky.dead:
+        if lives > 0:
+            powerup = False
+            power_counter = 0
+            lives -= 1
+            startup_counter = 0
+            player_x = 450
+            player_y = 663
+            direction = 0
+            direction_command = 0
+            blinky_x = 56
+            blinky_y = 58
+            blinky_direction = 0
+            inky_x = 440
+            inky_y = 388
+            inky_direction = 2
+            pinky_x = 440
+            pinky_y = 438
+            pinky_direction = 2
+            clyde_x = 440
+            clyde_y = 438
+            clyde_direction = 2
+            eaten_ghost = [False, False, False, False]
+            blinky_dead = False
+            inky_dead = False
+            clyde_dead = False
+            pinky_dead = False
+        else:
+            game_over = True
+            moving = False
+            startup_counter = 0
+    if powerup and player_circle.colliderect(clyde.rect) and eaten_ghost[3] and not clyde.dead:
+        if lives > 0:
+            powerup = False
+            power_counter = 0
+            lives -= 1
+            startup_counter = 0
+            player_x = 450
+            player_y = 663
+            direction = 0
+            direction_command = 0
+            blinky_x = 56
+            blinky_y = 58
+            blinky_direction = 0
+            inky_x = 440
+            inky_y = 388
+            inky_direction = 2
+            pinky_x = 440
+            pinky_y = 438
+            pinky_direction = 2
+            clyde_x = 440
+            clyde_y = 438
+            clyde_direction = 2
+            eaten_ghost = [False, False, False, False]
+            blinky_dead = False
+            inky_dead = False
+            clyde_dead = False
+            pinky_dead = False
+        else:
+            game_over = True
+            moving = False
+            startup_counter = 0
+    # Перевірка на з'їдання привидів гравцем
+    if powerup and player_circle.colliderect(blinky.rect) and not blinky.dead and not eaten_ghost[0]:
+        blinky_dead = True
+        eaten_ghost[0] = True
+        score += (2 ** eaten_ghost.count(True)) * 100
+    if powerup and player_circle.colliderect(inky.rect) and not inky.dead and not eaten_ghost[1]:
+        inky_dead = True
+        eaten_ghost[1] = True
+        score += (2 ** eaten_ghost.count(True)) * 100
+    if powerup and player_circle.colliderect(pinky.rect) and not pinky.dead and not eaten_ghost[2]:
+        pinky_dead = True
+        eaten_ghost[2] = True
+        score += (2 ** eaten_ghost.count(True)) * 100
+    if powerup and player_circle.colliderect(clyde.rect) and not clyde.dead and not eaten_ghost[3]:
+        clyde_dead = True
+        eaten_ghost[3] = True
+        score += (2 ** eaten_ghost.count(True)) * 100
