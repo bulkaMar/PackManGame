@@ -497,8 +497,20 @@ class Ghost:
         return self.x_pos, self.y_pos, self.direction    
         
     def move_inky(self):
-        # r, l, u, d
-        # inky turns up or down at any point to pursue, but left and right only on collision
+        """
+    Керує рухом привида Inky залежно від його поточного напрямку та цілей на карті гри.
+
+    Що робить:
+    Функція визначає напрямок руху привида Inky залежно від цілей та перешкод на мапі гри.
+    Якщо Inky може рухатися прямо, він рухатиметься у поточному напрямку.
+    Якщо Inky зіштовхується з перешкодою, він обиратиме інший доступний напрямок.
+
+    Що повертає:
+    Повертає кортеж з трьома елементами:
+    - Нове значення `x_pos`, яке відповідає новому положенню привида по осі X.
+    - Нове значення `y_pos`, яке відповідає новому положенню привида по осі Y.
+    - Нове значення `direction`, яке відповідає новому напрямку руху привида.
+    """
         if self.direction == 0:
             if self.target[0] > self.x_pos and self.turns[0]:
                 self.x_pos += self.speed
@@ -619,7 +631,7 @@ class Ghost:
         return self.x_pos, self.y_pos, self.direction
     
 
-    
+
 #Головний цикл гри
 run = True
 while run:
