@@ -6,7 +6,7 @@ def draw_misc(screen, font, score, lives, player_images, game_over, game_won):
     powerups, lives, messages if player lost or won.
     '''
     #Вивід на екран поточної к-сті очок
-    score_text = font.render(f'Score: {score}', True, 'white')
+    score_text = font.render(f'К-сть очок: {score}', True, 'white')
     screen.blit(score_text, (10, 920))
     #Вивід на екран поточної к-сті життів
     for i in range(lives):
