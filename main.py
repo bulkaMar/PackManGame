@@ -12,7 +12,6 @@ pygame.init()
 WIDTH = 900
 HEIGHT = 950
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
-
 #Налаштування швидкодії гри
 timer = pygame.time.Clock()
 fps = 60
@@ -105,25 +104,10 @@ class Ghost:
         self.id = id
         self.turns, self.in_box = self.check_collisions()
         self.rect = self.draw()
-
-    def draw(self):
-        """
-        Малює привид на екрані залежно від його поточного стану.
-
-        Параметри:
-        - self: Екземпляр класу привида.
-    
-        Що робить:
-        Функція відповідає за малювання зображення привида на екрані відповідно до його поточного стану. 
-        Залежно від наявності активного powerup та стану привида (живий, мертвий, в стані паніки), 
-        вона вибирає відповідне зображення для малювання.
-
-        Що повертає:
-        Повертає прямокутник, який обмежує область, де знаходиться привид на екрані. Це може бути
-        корисно для подальшої обробки зіткнень або інших операцій гри. Якщо привид не малюється
-        на екрані у поточному стані, повертається None.
-        """
         
+    
+    
+    def draw(self):
         if (not powerup and not self.dead) or (eaten_ghost[self.id] and powerup and not self.dead):
             screen.blit(self.img, (self.x_pos, self.y_pos))
         elif powerup and not self.dead and not eaten_ghost[self.id]:
@@ -132,7 +116,12 @@ class Ghost:
             screen.blit(dead_img, (self.x_pos, self.y_pos))
         ghost_rect = pygame.rect.Rect((self.center_x - 18, self.center_y - 18), (36, 36))
         return ghost_rect
-    
+
+
+
+
+
+
     def check_collisions(self):
         """
         Перевіряє зіткнення привида зі стінами та іншими об'єктами на карті гри.
