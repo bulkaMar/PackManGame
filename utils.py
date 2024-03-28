@@ -5,7 +5,7 @@ def draw_board(screen, color, flicker, HEIGHT, WIDTH, level, PI):
     Drawing elements of the board. Spheres, powerups and the board
     '''
     num1 = ((HEIGHT - 50) // 32)
-    num2 = (WIDTH // 30)
+    num2 = (WIDTH // 30)# horizontally, we need them to convert coordinates of pacman into indeces of our array
     for i in range(len(level)):
         for j in range(len(level[i])):
             if level[i][j] == 1:
