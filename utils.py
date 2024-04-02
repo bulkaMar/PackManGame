@@ -5,7 +5,7 @@ def draw_board(screen, color, flicker, HEIGHT, WIDTH, level, PI):
     Drawing elements of the board. Spheres, powerups and the board
     '''
     num1 = ((HEIGHT - 50) // 32)
-    num2 = (WIDTH // 30)
+    num2 = (WIDTH // 30)# horizontally, we need them to convert coordinates of pacman into indeces of our array
     for i in range(len(level)):
         for j in range(len(level[i])):
             if level[i][j] == 1:
@@ -63,6 +63,7 @@ def get_targets(blink_x, blink_y, ink_x, ink_y, pink_x, pink_y, clyd_x, clyd_y, 
     else:
         runaway_y = 0
     return_target = (380, 400) # target position ghosts return to when they are “dead”
+
     if powerup: # when pacman ate a powerup, ghosts’ target positions are set based on whether they are dead or have been eaten
         # if a ghost isn't dead wasn't eaten, its target position is runaway_x; runaway_y
         # if a ghost isn't dead but was eaten, its target position is either (400, 100) or pacman's position
@@ -134,7 +135,6 @@ def get_targets(blink_x, blink_y, ink_x, ink_y, pink_x, pink_y, clyd_x, clyd_y, 
             clyd_target = return_target
     return [blink_target, ink_target, pink_target, clyd_target] # returning target positions for every ghost
 
-
 def check_position(centerx, centery, direction, HEIGHT, WIDTH, level):
     '''
     Processing all available moves for pacman in particular positions on the map
@@ -185,22 +185,6 @@ def check_position(centerx, centery, direction, HEIGHT, WIDTH, level):
         turns[1] = True # right
 
     return turns
-
-
-def move_player(play_x, play_y, direction, turns_allowed, player_speed):
-    '''
-    Rules of moving pacman around
-    '''
-    if direction == 0 and turns_allowed[0]: # right
-        play_x += player_speed # moves pacman to the right by increasing the x-coordinate of pacman
-    elif direction == 1 and turns_allowed[1]: # left
-        play_x -= player_speed # analogically
-    if direction == 2 and turns_allowed[2]: # up
-        play_y -= player_speed
-    elif direction == 3 and turns_allowed[3]: # down
-        play_y += player_speed
-    return play_x, play_y
-
 
 def move_player(play_x, play_y, direction, turns_allowed, player_speed):
     '''
