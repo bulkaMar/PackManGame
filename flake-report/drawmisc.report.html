@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: drawmisc.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-2"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="drawmisc.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               drawmisc.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  7
+               </span>
+               <strong>E501:</strong> line too long (92 > 79 characters)
+               
+                  (and 4 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (92 > 79 characters):</p>
+               
+               <a href="drawmisc.source.html#l13">
+                  <tt><i>13</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">player_images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)),</span> <span class="p">(</span><span class="mi">650</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">915</span><span class="p">))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (96 > 79 characters):</p>
+               
+               <a href="drawmisc.source.html#l19">
+                  <tt><i>19</i>         <span class="n">restart_text</span> <span class="o">=</span> <span class="n">font_small</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;Натисніть Space, щоб почати нову гру&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (129 > 79 characters):</p>
+               
+               <a href="drawmisc.source.html#l20">
+                  <tt><i>20</i>         <span class="n">gameover_rect</span> <span class="o">=</span> <span class="n">gameover_text</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">50</span><span class="p">))</span> <span class="c1"># placing in the center</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (103 > 79 characters):</p>
+               
+               <a href="drawmisc.source.html#l21">
+                  <tt><i>21</i>         <span class="n">restart_rect</span> <span class="o">=</span> <span class="n">restart_text</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">50</span><span class="p">))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (96 > 79 characters):</p>
+               
+               <a href="drawmisc.source.html#l29">
+                  <tt><i>29</i>         <span class="n">restart_text</span> <span class="o">=</span> <span class="n">font_small</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;Натисніть Space, щоб почати нову гру&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (105 > 79 characters):</p>
+               
+               <a href="drawmisc.source.html#l30">
+                  <tt><i>30</i>         <span class="n">gameover_rect</span> <span class="o">=</span> <span class="n">gameover_text</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">50</span><span class="p">))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (103 > 79 characters):</p>
+               
+               <a href="drawmisc.source.html#l31">
+                  <tt><i>31</i>         <span class="n">restart_rect</span> <span class="o">=</span> <span class="n">restart_text</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">50</span><span class="p">))</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E265">
+               <span class="count sev-2">
+                  4
+               </span>
+               <strong>E265:</strong> block comment should start with '# '
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="drawmisc.source.html#l2">
+                  <tt><i>2</i> <span class="c1">#Функція для відмалювання різних текстів</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="drawmisc.source.html#l8">
+                  <tt><i>8</i>     <span class="c1">#Вивід на екран поточної к-сті очок</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="drawmisc.source.html#l11">
+                  <tt><i>11</i>     <span class="c1">#Вивід на екран поточної к-сті життів</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="drawmisc.source.html#l14">
+                  <tt><i>14</i>     <span class="c1">#Вивід на екран повідомлення після поразки в грі</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E261">
+               <span class="count sev-2">
+                  2
+               </span>
+               <strong>E261:</strong> at least two spaces before inline comment
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="drawmisc.source.html#l16">
+                  <tt><i>16</i>         <span class="n">font_big</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">72</span><span class="p">)</span> <span class="c1"># fonts for different messages</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="drawmisc.source.html#l20">
+                  <tt><i>20</i>         <span class="n">gameover_rect</span> <span class="o">=</span> <span class="n">gameover_text</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">50</span><span class="p">))</span> <span class="c1"># placing in the center</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E302">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E302:</strong> expected 2 blank lines, found 0
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="drawmisc.source.html#l3">
+                  <tt><i>3</i> <span class="k">def</span> <span class="nf">draw_misc</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">lives</span><span class="p">,</span> <span class="n">player_images</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">game_won</span><span class="p">):</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W292">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>W292:</strong> no newline at end of file
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="drawmisc.source.html#l33">
+                  <tt><i>33</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">restart_text</span><span class="p">,</span> <span class="n">restart_rect</span><span class="p">)</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>
