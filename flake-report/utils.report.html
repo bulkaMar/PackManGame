@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: utils.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-2"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="utils.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               utils.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="E261">
+               <span class="count sev-2">
+                  63
+               </span>
+               <strong>E261:</strong> at least two spaces before inline comment
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="utils.source.html#l8">
+                  <tt><i>8</i>     <span class="n">num2</span> <span class="o">=</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">30</span><span class="p">)</span><span class="c1"># horizontally, we need them to convert coordinates of pacman into indeces of our array</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l12">
+                  <tt><i>12</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num2</span><span class="p">),</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># adding spheres</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l14">
+                  <tt><i>14</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num2</span><span class="p">),</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="mi">10</span><span class="p">)</span><span class="c1"># adding powerups</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l17">
+                  <tt><i>17</i>                                  <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num2</span><span class="p">),</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num1</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span><span class="c1"># adding vertical lines</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l19">
+                  <tt><i>19</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="c1"># adding horizontal</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l23">
+                  <tt><i>23</i>                                 <span class="mi">0</span><span class="p">,</span> <span class="n">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># adding top right corner</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l25">
+                  <tt><i>25</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="c1"># adding top left corner</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l27">
+                  <tt><i>27</i>             <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span><span class="c1"># adding bottom left corner</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l30">
+                  <tt><i>30</i>             <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span> <span class="c1"># adding bottom right corner</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l34">
+                  <tt><i>34</i>             <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span> <span class="c1"># adding vertical line for ghost&#39;s gate</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l43">
+                  <tt><i>43</i>     <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># if pacman moves right</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l44">
+                  <tt><i>44</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">player_images</span><span class="p">[</span><span class="n">counter</span> <span class="o">//</span> <span class="mi">5</span><span class="p">],</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span> <span class="c1"># drawing appropriate pacman image</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l45">
+                  <tt><i>45</i>     <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># left</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l46">
+                  <tt><i>46</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">player_images</span><span class="p">[</span><span class="n">counter</span> <span class="o">//</span> <span class="mi">5</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span> <span class="c1"># flipping the picture so it faces the opposite way</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l47">
+                  <tt><i>47</i>     <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># up</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l48">
+                  <tt><i>48</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">player_images</span><span class="p">[</span><span class="n">counter</span> <span class="o">//</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">90</span><span class="p">),</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span> <span class="c1"># rotating picture accordingly</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l49">
+                  <tt><i>49</i>     <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># down</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l57">
+                  <tt><i>57</i>     <span class="k">if</span> <span class="n">player_x</span> <span class="o">&lt;</span> <span class="mi">450</span><span class="p">:</span> <span class="c1"># pacman x coordinate</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l58">
+                  <tt><i>58</i>         <span class="n">runaway_x</span> <span class="o">=</span> <span class="mi">900</span> <span class="c1"># target positions for ghosts when the player has a powerup</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l60">
+                  <tt><i>60</i>         <span class="n">runaway_x</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># analogically (ghosts running to the oposite side of pacman)</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l61">
+                  <tt><i>61</i>     <span class="k">if</span> <span class="n">player_y</span> <span class="o">&lt;</span> <span class="mi">450</span><span class="p">:</span> <span class="c1"># analogically for y coordinates</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l65">
+                  <tt><i>65</i>     <span class="n">return_target</span> <span class="o">=</span> <span class="p">(</span><span class="mi">380</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span> <span class="c1"># target position ghosts return to when they are “dead”</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l67">
+                  <tt><i>67</i>     <span class="k">if</span> <span class="n">powerup</span><span class="p">:</span> <span class="c1"># when pacman ate a powerup, ghosts’ target positions are set based on whether they are dead or have been eaten</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l74">
+                  <tt><i>74</i>             <span class="k">if</span> <span class="mi">340</span> <span class="o">&lt;</span> <span class="n">blink_x</span> <span class="o">&lt;</span> <span class="mi">560</span> <span class="ow">and</span> <span class="mi">340</span> <span class="o">&lt;</span> <span class="n">blink_y</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span> <span class="c1"># if the range for ghosts position applies</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l75">
+                  <tt><i>75</i>                 <span class="n">blink_target</span> <span class="o">=</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># target position when pacman has a powerup activated</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l77">
+                  <tt><i>77</i>                 <span class="n">blink_target</span> <span class="o">=</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">)</span> <span class="c1"># start pursuing the player again</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l107">
+                  <tt><i>107</i>     <span class="k">else</span><span class="p">:</span> <span class="c1"># if pacman has no powerup</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l108">
+                  <tt><i>108</i>         <span class="k">if</span> <span class="ow">not</span> <span class="n">blinky</span><span class="o">.</span><span class="n">dead</span><span class="p">:</span> <span class="c1"># analogically</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l136">
+                  <tt><i>136</i>     <span class="k">return</span> <span class="p">[</span><span class="n">blink_target</span><span class="p">,</span> <span class="n">ink_target</span><span class="p">,</span> <span class="n">pink_target</span><span class="p">,</span> <span class="n">clyd_target</span><span class="p">]</span> <span class="c1"># returning target positions for every ghost</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l142">
+                  <tt><i>142</i>     <span class="n">turns</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> <span class="c1"># tracking pacman&#39;s directions he can go</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l145">
+                  <tt><i>145</i>     <span class="n">num3</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># fudge number to adjust the precision of collision detection</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l147">
+                  <tt><i>147</i>     <span class="k">if</span> <span class="n">centerx</span> <span class="o">//</span> <span class="mi">30</span> <span class="o">&lt;</span> <span class="mi">29</span><span class="p">:</span> <span class="c1"># if pacman is within these map bounds</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l148">
+                  <tt><i>148</i>         <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># right</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l149">
+                  <tt><i>149</i>             <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">centery</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][(</span><span class="n">centerx</span> <span class="o">-</span> <span class="n">num3</span><span class="p">)</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># checking direction and the value of the cell in array in the directions</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l150">
+                  <tt><i>150</i>                 <span class="n">turns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># can turn this direction (&lt; 3 because empty spaces)</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l151">
+                  <tt><i>151</i>         <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># left</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l153">
+                  <tt><i>153</i>                 <span class="n">turns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># analogically</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l154">
+                  <tt><i>154</i>         <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># up</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l156">
+                  <tt><i>156</i>                 <span class="n">turns</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># analogically</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l157">
+                  <tt><i>157</i>         <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># down</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l159">
+                  <tt><i>159</i>                 <span class="n">turns</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># analogically</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l161">
+                  <tt><i>161</i>         <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># up or down</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l162">
+                  <tt><i>162</i>             <span class="k">if</span> <span class="mi">12</span> <span class="o">&lt;=</span> <span class="n">centerx</span> <span class="o">%</span> <span class="n">num2</span> <span class="o">&lt;=</span> <span class="mi">18</span><span class="p">:</span> <span class="c1"># the horizontal position of the player within the current cell</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l163">
+                  <tt><i>163</i>                 <span class="k">if</span> <span class="n">level</span><span class="p">[(</span><span class="n">centery</span> <span class="o">+</span> <span class="n">num3</span><span class="p">)</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">centerx</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># analogically</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l172">
+                  <tt><i>172</i>         <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># right or left</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l184">
+                  <tt><i>184</i>         <span class="n">turns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># left</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l185">
+                  <tt><i>185</i>         <span class="n">turns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># right</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l193">
+                  <tt><i>193</i>     <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">turns_allowed</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c1"># right</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l194">
+                  <tt><i>194</i>         <span class="n">play_x</span> <span class="o">+=</span> <span class="n">player_speed</span> <span class="c1"># moves pacman to the right by increasing the x-coordinate of pacman</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l195">
+                  <tt><i>195</i>     <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">turns_allowed</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="c1"># left</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l196">
+                  <tt><i>196</i>         <span class="n">play_x</span> <span class="o">-=</span> <span class="n">player_speed</span> <span class="c1"># analogically</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l197">
+                  <tt><i>197</i>     <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">turns_allowed</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="c1"># up</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l199">
+                  <tt><i>199</i>     <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">turns_allowed</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="c1"># down</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l208">
+                  <tt><i>208</i>     <span class="n">num1</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEIGHT</span> <span class="o">-</span> <span class="mi">50</span><span class="p">)</span> <span class="o">//</span> <span class="mi">32</span> <span class="c1"># number of cells vertically</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l209">
+                  <tt><i>209</i>     <span class="n">num2</span> <span class="o">=</span> <span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">30</span> <span class="c1"># horizontally, we need them to convert coordinates of pacman into indeces of our array</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l211">
+                  <tt><i>211</i>         <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">center_y</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">center_x</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># indeces with value 1 (referring to spheres)</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l212">
+                  <tt><i>212</i>             <span class="n">level</span><span class="p">[</span><span class="n">center_y</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">center_x</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># turn into 0 (referring to nothingness, indicating it&#39;s eaten)</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l213">
+                  <tt><i>213</i>             <span class="n">score</span> <span class="o">+=</span> <span class="mi">10</span> <span class="c1"># adding to the score when pacman eats a sphere</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l214">
+                  <tt><i>214</i>         <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">center_y</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">center_x</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># indeces with value 2 (referring to powerups)</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l215">
+                  <tt><i>215</i>             <span class="n">level</span><span class="p">[</span><span class="n">center_y</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">center_x</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># turn into 0 (referring to nothingness, indicating it&#39;s eaten)</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l216">
+                  <tt><i>216</i>             <span class="n">score</span> <span class="o">+=</span> <span class="mi">50</span> <span class="c1"># adding to the score when powerup is eaten</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l217">
+                  <tt><i>217</i>             <span class="n">power</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># toggle powerup mode on</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l219">
+                  <tt><i>219</i>             <span class="n">eaten_ghosts</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> <span class="c1"># initial array of ghosts, which arent eaten</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  44
+               </span>
+               <strong>E501:</strong> line too long (111 > 79 characters)
+               
+                  (and 30 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (111 > 79 characters):</p>
+               
+               <a href="utils.source.html#l8">
+                  <tt><i>8</i>     <span class="n">num2</span> <span class="o">=</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">30</span><span class="p">)</span><span class="c1"># horizontally, we need them to convert coordinates of pacman into indeces of our array</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (123 > 79 characters):</p>
+               
+               <a href="utils.source.html#l12">
+                  <tt><i>12</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num2</span><span class="p">),</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># adding spheres</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (124 > 79 characters):</p>
+               
+               <a href="utils.source.html#l14">
+                  <tt><i>14</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num2</span><span class="p">),</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="mi">10</span><span class="p">)</span><span class="c1"># adding powerups</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (84 > 79 characters):</p>
+               
+               <a href="utils.source.html#l16">
+                  <tt><i>16</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num2</span><span class="p">),</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span><span class="p">),</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (102 > 79 characters):</p>
+               
+               <a href="utils.source.html#l17">
+                  <tt><i>17</i>                                  <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num2</span><span class="p">),</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num1</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span><span class="c1"># adding vertical lines</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (104 > 79 characters):</p>
+               
+               <a href="utils.source.html#l19">
+                  <tt><i>19</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="c1"># adding horizontal</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (118 > 79 characters):</p>
+               
+               <a href="utils.source.html#l22">
+                  <tt><i>22</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">[(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">-</span> <span class="p">(</span><span class="n">num2</span> <span class="o">*</span> <span class="mf">0.4</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num1</span><span class="p">],</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (114 > 79 characters):</p>
+               
+               <a href="utils.source.html#l26">
+                  <tt><i>26</i>                                 <span class="p">[(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="n">num2</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)),</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num1</span><span class="p">],</span> <span class="n">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">PI</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (118 > 79 characters):</p>
+               
+               <a href="utils.source.html#l28">
+                  <tt><i>28</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="p">[(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">+</span> <span class="p">(</span><span class="n">num2</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)),</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num1</span><span class="p">],</span> <span class="n">PI</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="utils.source.html#l32">
+                  <tt><i>32</i>                                 <span class="p">[(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">-</span> <span class="p">(</span><span class="n">num2</span> <span class="o">*</span> <span class="mf">0.4</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span> <span class="n">num2</span><span class="p">,</span> <span class="n">num1</span><span class="p">],</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (86 > 79 characters):</p>
+               
+               <a href="utils.source.html#l35">
+                  <tt><i>35</i>                 <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="n">num2</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">num1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">num1</span><span class="p">)),</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (105 > 79 characters):</p>
+               
+               <a href="utils.source.html#l44">
+                  <tt><i>44</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">player_images</span><span class="p">[</span><span class="n">counter</span> <span class="o">//</span> <span class="mi">5</span><span class="p">],</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span> <span class="c1"># drawing appropriate pacman image</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (158 > 79 characters):</p>
+               
+               <a href="utils.source.html#l46">
+                  <tt><i>46</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">player_images</span><span class="p">[</span><span class="n">counter</span> <span class="o">//</span> <span class="mi">5</span><span class="p">],</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span> <span class="c1"># flipping the picture so it faces the opposite way</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (130 > 79 characters):</p>
+               
+               <a href="utils.source.html#l48">
+                  <tt><i>48</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">player_images</span><span class="p">[</span><span class="n">counter</span> <span class="o">//</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">90</span><span class="p">),</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span> <span class="c1"># rotating picture accordingly</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (100 > 79 characters):</p>
+               
+               <a href="utils.source.html#l50">
+                  <tt><i>50</i>         <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">player_images</span><span class="p">[</span><span class="n">counter</span> <span class="o">//</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">270</span><span class="p">),</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (165 > 79 characters):</p>
+               
+               <a href="utils.source.html#l53">
+                  <tt><i>53</i> <span class="k">def</span> <span class="nf">get_targets</span><span class="p">(</span><span class="n">blink_x</span><span class="p">,</span> <span class="n">blink_y</span><span class="p">,</span> <span class="n">ink_x</span><span class="p">,</span> <span class="n">ink_y</span><span class="p">,</span> <span class="n">pink_x</span><span class="p">,</span> <span class="n">pink_y</span><span class="p">,</span> <span class="n">clyd_x</span><span class="p">,</span> <span class="n">clyd_y</span><span class="p">,</span> <span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">,</span> <span class="n">powerup</span><span class="p">,</span> <span class="n">blinky</span><span class="p">,</span> <span class="n">inky</span><span class="p">,</span> <span class="n">pinky</span><span class="p">,</span> <span class="n">clyde</span><span class="p">,</span> <span class="n">eaten_ghost</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (109 > 79 characters):</p>
+               
+               <a href="utils.source.html#l55">
+                  <tt><i>55</i> <span class="sd">    The function defines all target positions for ghosts in different situations, related to pacman&#39;s actions</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (83 > 79 characters):</p>
+               
+               <a href="utils.source.html#l58">
+                  <tt><i>58</i>         <span class="n">runaway_x</span> <span class="o">=</span> <span class="mi">900</span> <span class="c1"># target positions for ghosts when the player has a powerup</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (83 > 79 characters):</p>
+               
+               <a href="utils.source.html#l60">
+                  <tt><i>60</i>         <span class="n">runaway_x</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># analogically (ghosts running to the oposite side of pacman)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (86 > 79 characters):</p>
+               
+               <a href="utils.source.html#l65">
+                  <tt><i>65</i>     <span class="n">return_target</span> <span class="o">=</span> <span class="p">(</span><span class="mi">380</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span> <span class="c1"># target position ghosts return to when they are “dead”</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (127 > 79 characters):</p>
+               
+               <a href="utils.source.html#l67">
+                  <tt><i>67</i>     <span class="k">if</span> <span class="n">powerup</span><span class="p">:</span> <span class="c1"># when pacman ate a powerup, ghosts’ target positions are set based on whether they are dead or have been eaten</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (89 > 79 characters):</p>
+               
+               <a href="utils.source.html#l68">
+                  <tt><i>68</i>         <span class="c1"># if a ghost isn&#39;t dead wasn&#39;t eaten, its target position is runaway_x; runaway_y</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (108 > 79 characters):</p>
+               
+               <a href="utils.source.html#l69">
+                  <tt><i>69</i>         <span class="c1"># if a ghost isn&#39;t dead but was eaten, its target position is either (400, 100) or pacman&#39;s position</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (97 > 79 characters):</p>
+               
+               <a href="utils.source.html#l70">
+                  <tt><i>70</i>         <span class="c1"># if a ghost is dead, its target position is return_target, meaning the center of the map</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (102 > 79 characters):</p>
+               
+               <a href="utils.source.html#l74">
+                  <tt><i>74</i>             <span class="k">if</span> <span class="mi">340</span> <span class="o">&lt;</span> <span class="n">blink_x</span> <span class="o">&lt;</span> <span class="mi">560</span> <span class="ow">and</span> <span class="mi">340</span> <span class="o">&lt;</span> <span class="n">blink_y</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span> <span class="c1"># if the range for ghosts position applies</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="utils.source.html#l75">
+                  <tt><i>75</i>                 <span class="n">blink_target</span> <span class="o">=</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># target position when pacman has a powerup activated</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (85 > 79 characters):</p>
+               
+               <a href="utils.source.html#l77">
+                  <tt><i>77</i>                 <span class="n">blink_target</span> <span class="o">=</span> <span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">)</span> <span class="c1"># start pursuing the player again</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (108 > 79 characters):</p>
+               
+               <a href="utils.source.html#l136">
+                  <tt><i>136</i>     <span class="k">return</span> <span class="p">[</span><span class="n">blink_target</span><span class="p">,</span> <span class="n">ink_target</span><span class="p">,</span> <span class="n">pink_target</span><span class="p">,</span> <span class="n">clyd_target</span><span class="p">]</span> <span class="c1"># returning target positions for every ghost</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="utils.source.html#l140">
+                  <tt><i>140</i> <span class="sd">    Processing all available moves for pacman in particular positions on the map</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (81 > 79 characters):</p>
+               
+               <a href="utils.source.html#l142">
+                  <tt><i>142</i>     <span class="n">turns</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> <span class="c1"># tracking pacman&#39;s directions he can go</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="utils.source.html#l146">
+                  <tt><i>146</i>     <span class="c1"># check collisions based on center x and center y of player +/- fudge number</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (142 > 79 characters):</p>
+               
+               <a href="utils.source.html#l149">
+                  <tt><i>149</i>             <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">centery</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][(</span><span class="n">centerx</span> <span class="o">-</span> <span class="n">num3</span><span class="p">)</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># checking direction and the value of the cell in array in the directions</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (84 > 79 characters):</p>
+               
+               <a href="utils.source.html#l150">
+                  <tt><i>150</i>                 <span class="n">turns</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># can turn this direction (&lt; 3 because empty spaces)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (106 > 79 characters):</p>
+               
+               <a href="utils.source.html#l162">
+                  <tt><i>162</i>             <span class="k">if</span> <span class="mi">12</span> <span class="o">&lt;=</span> <span class="n">centerx</span> <span class="o">%</span> <span class="n">num2</span> <span class="o">&lt;=</span> <span class="mi">18</span><span class="p">:</span> <span class="c1"># the horizontal position of the player within the current cell</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (87 > 79 characters):</p>
+               
+               <a href="utils.source.html#l163">
+                  <tt><i>163</i>                 <span class="k">if</span> <span class="n">level</span><span class="p">[(</span><span class="n">centery</span> <span class="o">+</span> <span class="n">num3</span><span class="p">)</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">centerx</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># analogically</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (99 > 79 characters):</p>
+               
+               <a href="utils.source.html#l194">
+                  <tt><i>194</i>         <span class="n">play_x</span> <span class="o">+=</span> <span class="n">player_speed</span> <span class="c1"># moves pacman to the right by increasing the x-coordinate of pacman</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (114 > 79 characters):</p>
+               
+               <a href="utils.source.html#l204">
+                  <tt><i>204</i> <span class="k">def</span> <span class="nf">check_collisions</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">power_count</span><span class="p">,</span> <span class="n">eaten_ghosts</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">player_x</span><span class="p">,</span> <span class="n">center_y</span><span class="p">,</span> <span class="n">center_x</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (104 > 79 characters):</p>
+               
+               <a href="utils.source.html#l206">
+                  <tt><i>206</i> <span class="sd">    Checking collision of pacman with spheres, powerups and ghosts. Updating values according to actions</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (110 > 79 characters):</p>
+               
+               <a href="utils.source.html#l209">
+                  <tt><i>209</i>     <span class="n">num2</span> <span class="o">=</span> <span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">30</span> <span class="c1"># horizontally, we need them to convert coordinates of pacman into indeces of our array</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (104 > 79 characters):</p>
+               
+               <a href="utils.source.html#l211">
+                  <tt><i>211</i>         <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">center_y</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">center_x</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># indeces with value 1 (referring to spheres)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (121 > 79 characters):</p>
+               
+               <a href="utils.source.html#l212">
+                  <tt><i>212</i>             <span class="n">level</span><span class="p">[</span><span class="n">center_y</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">center_x</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># turn into 0 (referring to nothingness, indicating it&#39;s eaten)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (105 > 79 characters):</p>
+               
+               <a href="utils.source.html#l214">
+                  <tt><i>214</i>         <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">center_y</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">center_x</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># indeces with value 2 (referring to powerups)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (121 > 79 characters):</p>
+               
+               <a href="utils.source.html#l215">
+                  <tt><i>215</i>             <span class="n">level</span><span class="p">[</span><span class="n">center_y</span> <span class="o">//</span> <span class="n">num1</span><span class="p">][</span><span class="n">center_x</span> <span class="o">//</span> <span class="n">num2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># turn into 0 (referring to nothingness, indicating it&#39;s eaten)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (100 > 79 characters):</p>
+               
+               <a href="utils.source.html#l219">
+                  <tt><i>219</i>             <span class="n">eaten_ghosts</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> <span class="c1"># initial array of ghosts, which arent eaten</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E302">
+               <span class="count sev-2">
+                  3
+               </span>
+               <strong>E302:</strong> expected 2 blank lines, found 1
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="utils.source.html#l3">
+                  <tt><i>3</i> <span class="k">def</span> <span class="nf">draw_board</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">flicker</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">PI</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l138">
+                  <tt><i>138</i> <span class="k">def</span> <span class="nf">check_position</span><span class="p">(</span><span class="n">centerx</span><span class="p">,</span> <span class="n">centery</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="utils.source.html#l189">
+                  <tt><i>189</i> <span class="k">def</span> <span class="nf">move_player</span><span class="p">(</span><span class="n">play_x</span><span class="p">,</span> <span class="n">play_y</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">turns_allowed</span><span class="p">,</span> <span class="n">player_speed</span><span class="p">):</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E231">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E231:</strong> missing whitespace after ':'
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="utils.source.html#l27">
+                  <tt><i>27</i>             <span class="k">if</span> <span class="n">level</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span><span class="c1"># adding bottom left corner</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W292">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>W292:</strong> no newline at end of file
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="utils.source.html#l220">
+                  <tt><i>220</i>     <span class="k">return</span> <span class="n">score</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">power_count</span><span class="p">,</span> <span class="n">eaten_ghosts</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>

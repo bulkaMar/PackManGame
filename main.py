@@ -759,29 +759,53 @@ class Ghost:
             self.x_pos - 30
         return self.x_pos, self.y_pos, self.direction
 
+def fps_moving(startup_counter1):
+    global startup_counter
+    if startup_counter1 < 180 and not game_over and not game_won:
+        startup_counter += 1
+        return False
+    else:
+        return True
+
+def fps_counter(counter1):
+    global counter
+    if counter1 < 19:
+        counter += 1
+        return False
+    else:
+        counter = 0
+        return True
+
+def fps_powerup(powerup1, power_counter1):
+    global powerup
+    global eaten_ghost
+    if powerup1 and power_counter1 < 600:
+        power_counter1 += 1
+        return power_counter1
+    elif powerup1 and power_counter1 >= 600:
+        powerup = False
+        eaten_ghost = [False, False, False, False]
+        power_counter1 = 0
+        return power_counter1
+
+def player_teleportation(player_x1):
+    global player_x
+    if player_x1 > 900:
+        player_x = -47
+    elif player_x1 < -50:
+        player_x = 897
+    else:
+        player_x = player_x1
+
 #Головний цикл гри
 run = True
 while run:
     timer.tick(fps)
     #Налаштування частоти блимань
-    if counter < 19:
-        counter += 1
-        if counter > 3:
-            flicker = False
-    else:
-        counter = 0
-        flicker = True
-    if powerup and power_counter < 600:
-        power_counter += 1
-    elif powerup and power_counter >= 600:
-        power_counter = 0
-        powerup = False
-        eaten_ghost = [False, False, False, False]
-    if startup_counter < 180 and not game_over and not game_won:
-        moving = False
-        startup_counter += 1
-    else:
-        moving = True
+
+    flicker = fps_counter(counter)
+    power_counter = fps_powerup(powerup, power_counter)
+    moving = fps_moving(startup_counter)
 
     screen.fill('black')
     #Відмалювання рівня
@@ -1097,10 +1121,8 @@ while run:
         direction = 3
 
     # Телепортація гравця зліва на право
-    if player_x > 900:
-        player_x = -47
-    elif player_x < -50:
-        player_x = 897
+    player_teleportation(player_x)
+
 
     # Воскресіння привидів
     if blinky.in_box and blinky_dead:
