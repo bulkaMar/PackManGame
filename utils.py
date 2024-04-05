@@ -1,5 +1,6 @@
 import pygame
 
+
 def draw_board(screen, color, flicker, HEIGHT, WIDTH, level, PI):
     '''
     Drawing elements of the board. Spheres, powerups and the board
@@ -24,7 +25,7 @@ def draw_board(screen, color, flicker, HEIGHT, WIDTH, level, PI):
             if level[i][j] == 6:
                 pygame.draw.arc(screen, color, # adding top left corner
                                 [(j * num2 + (num2 * 0.5)), (i * num1 + (0.5 * num1)), num2, num1], PI / 2, PI, 3)
-            if level[i][j] == 7:# adding bottom left corner
+            if level[i][j] == 7: # adding bottom left corner
                 pygame.draw.arc(screen, color, [(j * num2 + (num2 * 0.5)), (i * num1 - (0.4 * num1)), num2, num1], PI,
                                 3 * PI / 2, 3)
             if level[i][j] == 8: # adding bottom right corner
