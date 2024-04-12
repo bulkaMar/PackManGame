@@ -1,12 +1,18 @@
+import sys
+
 import main
 import pytest
 import pygame
 from unittest.mock import patch
 
+main.run = False
 @pytest.fixture # Запуск pygame
 def screen():
-    pygame.init()
-    return pygame.display.set_mode((800, 600))
+    main.event.key = pygame.K_ESCAPE
+    return pygame.quit()
+
+
+
 @pytest.mark.fps_test # тест на таймер до початку руху
 @pytest.mark.parametrize("startup_counter, expected_result", [(-100, False),
                                                               (0, False),
