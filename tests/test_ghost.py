@@ -16,6 +16,17 @@ def ghost_instance(screen):
     target = (100, 100)  # Приклад значення цілі
     return Ghost(x_coord=0, y_coord=0, target=target, speed=1, img=img, direct=None, dead=False, box=False, id=1)
 
+@pytest.fixture
+def event_loop(screen):
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+        pygame.display.update()  
 
 # Test cases
 @pytest.mark.parametrize("x_pos, y_pos, expected_in_box", [
@@ -74,3 +85,5 @@ def test_move_ghost_direction(ghost_instance, initial_direction, expected_x, exp
 def cleanup():
     yield
     pygame.quit()
+    
+    

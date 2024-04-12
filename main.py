@@ -1,4 +1,6 @@
 import copy
+import sys
+
 from board import boards
 import pygame
 import math
@@ -797,6 +799,14 @@ def player_teleportation(player_x1):
     else:
         player_x = player_x1
 
+def quitGame():
+    global run
+    run = False
+    pygame.display.quit()
+    pygame.quit()
+    sys.exit()
+
+
 #Головний цикл гри
 run = True
 while run:
@@ -1060,6 +1070,8 @@ while run:
         if event.type == pygame.QUIT:
             run = False
         if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                run = False
             if event.key == pygame.K_RIGHT:
                 direction_command = 0
             if event.key == pygame.K_LEFT:
@@ -1100,6 +1112,10 @@ while run:
                 game_over = False
                 game_won = False
 
+
+
+
+
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT and direction_command == 0:
                 direction_command = direction
@@ -1109,6 +1125,7 @@ while run:
                 direction_command = direction
             if event.key == pygame.K_DOWN and direction_command == 3:
                 direction_command = direction
+
 
     # Зміна напряму руху Пакмана
     if direction_command == 0 and turns_allowed[0]:
