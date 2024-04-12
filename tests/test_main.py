@@ -62,3 +62,4 @@ def test_player_teleportation1():
 def test_player_teleportation2():
     main.player_teleportation(main.player_x)
     assert main.player_x == 897
+
