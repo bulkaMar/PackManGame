@@ -3,7 +3,7 @@ import pytest
 import pygame
 from unittest.mock import patch
 
-@pytest.fixture #using fixtures for flexibility and no repetition
+@pytest.fixture #фікстура
 def screen():
     pygame.init()
     return pygame.display.set_mode((800, 600))
