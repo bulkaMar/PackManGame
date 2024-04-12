@@ -1,15 +1,12 @@
-import sys
-
 import main
 import pytest
 import pygame
 from unittest.mock import patch
 
-main.run = False
-@pytest.fixture # Запуск pygame
+@pytest.fixture #фікстура
 def screen():
-    main.event.key = pygame.K_ESCAPE
-    return pygame.quit()
+    pygame.init()
+    return pygame.display.set_mode((800, 600))
 
 
 

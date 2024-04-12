@@ -77,6 +77,9 @@ game_over = False
 game_won = False
 
 
+
+
+
 class Ghost:
     def __init__(self, x_coord, y_coord, target, speed, img, direct, dead, box, id):
         """
@@ -799,12 +802,7 @@ def player_teleportation(player_x1):
     else:
         player_x = player_x1
 
-def quitGame():
-    global run
-    run = False
-    pygame.display.quit()
-    pygame.quit()
-    sys.exit()
+
 
 
 #Головний цикл гри
@@ -1150,6 +1148,9 @@ while run:
         pinky_dead = False
     if clyde.in_box and clyde_dead:
         clyde_dead = False
+
+    if __name__ != "__main__":
+        run = False
     # Відмалювання всього
     pygame.display.flip()
 pygame.quit()
